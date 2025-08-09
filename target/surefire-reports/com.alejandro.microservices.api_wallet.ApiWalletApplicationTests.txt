@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.alejandro.microservices.api_wallet.ApiWalletApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.319 s - in com.alejandro.microservices.api_wallet.ApiWalletApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 46.95 s -- in com.alejandro.microservices.api_wallet.ApiWalletApplicationTests

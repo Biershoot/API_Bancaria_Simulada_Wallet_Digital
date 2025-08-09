@@ -1,1 +1,16 @@
+com\alejandro\microservices\api_wallet\wallet\entity\Role.class
+com\alejandro\microservices\api_wallet\wallet\entity\Transaction$TransactionStatus.class
 com\alejandro\microservices\api_wallet\ApiWalletApplication.class
+com\alejandro\microservices\api_wallet\wallet\entity\User.class
+com\alejandro\microservices\api_wallet\wallet\security\CustomUserDetailsService.class
+com\alejandro\microservices\api_wallet\wallet\repository\TransactionRepository.class
+com\alejandro\microservices\api_wallet\wallet\security\JwtAuthenticationFilter.class
+com\alejandro\microservices\api_wallet\wallet\entity\Role$RoleName.class
+com\alejandro\microservices\api_wallet\wallet\repository\UserRepository.class
+com\alejandro\microservices\api_wallet\wallet\entity\Wallet.class
+com\alejandro\microservices\api_wallet\wallet\entity\Transaction.class
+com\alejandro\microservices\api_wallet\wallet\repository\RoleRepository.class
+com\alejandro\microservices\api_wallet\wallet\security\SecurityConfig.class
+com\alejandro\microservices\api_wallet\wallet\security\JwtUtil.class
+com\alejandro\microservices\api_wallet\wallet\entity\Transaction$TransactionType.class
+com\alejandro\microservices\api_wallet\wallet\repository\WalletRepository.class
