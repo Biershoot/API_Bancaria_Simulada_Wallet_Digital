@@ -6,8 +6,6 @@ com\alejandro\microservices\api_wallet\wallet\entity\User.class
 com\alejandro\microservices\api_wallet\auth\dto\AuthRequest.class
 com\alejandro\microservices\api_wallet\wallet\security\CustomUserDetailsService.class
 com\alejandro\microservices\api_wallet\auth\dto\AuthResponse.class
-com\alejandro\microservices\api_wallet\wallet\dto\AuthRequest.class
-com\alejandro\microservices\api_wallet\wallet\dto\RegisterRequest.class
 com\alejandro\microservices\api_wallet\wallet\entity\Role$RoleName.class
 com\alejandro\microservices\api_wallet\security\JwtRequestFilter.class
 com\alejandro\microservices\api_wallet\wallet\entity\Wallet.class
@@ -20,11 +18,8 @@ com\alejandro\microservices\api_wallet\wallet\security\JwtUtil.class
 com\alejandro\microservices\api_wallet\security\MyUserDetailsService.class
 com\alejandro\microservices\api_wallet\wallet\controller\WalletController.class
 com\alejandro\microservices\api_wallet\wallet\repository\WalletRepository.class
-com\alejandro\microservices\api_wallet\wallet\controller\AuthController.class
-com\alejandro\microservices\api_wallet\wallet\dto\AuthResponse.class
 com\alejandro\microservices\api_wallet\wallet\entity\Role.class
 com\alejandro\microservices\api_wallet\wallet\dto\TransferRequest.class
-com\alejandro\microservices\api_wallet\wallet\service\AuthService.class
 com\alejandro\microservices\api_wallet\wallet\dto\WalletResponse.class
 com\alejandro\microservices\api_wallet\wallet\repository\TransactionRepository.class
 com\alejandro\microservices\api_wallet\wallet\dto\TransferResponse.class
