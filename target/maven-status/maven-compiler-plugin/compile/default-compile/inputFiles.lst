@@ -9,6 +9,7 @@ C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservice
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\JwtTokenProvider.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\MyUserDetailsService.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\SecurityConfig.java
+C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\TokenBlacklistService.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\config\DataLoader.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\controller\WalletController.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\dto\TransferRequest.java

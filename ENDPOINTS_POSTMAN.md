@@ -42,6 +42,15 @@
 "Endpoint de autenticación funcionando correctamente"
 ```
 
+### **1.3 Logout**
+- **URL**: `POST {{base_url}}/auth/logout`
+- **Headers**: 
+  - `Authorization: Bearer {{token}}`
+- **Respuesta esperada**:
+```json
+"Logout exitoso. El token ha sido invalidado en el servidor."
+```
+
 ### **Usuarios Disponibles para Pruebas**:
 - **Usuario**: `admin` / **Contraseña**: `password`
 - **Usuario**: `user` / **Contraseña**: `password`
