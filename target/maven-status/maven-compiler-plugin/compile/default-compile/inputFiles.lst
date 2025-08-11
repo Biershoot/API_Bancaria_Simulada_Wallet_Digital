@@ -5,8 +5,8 @@ C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservice
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\config\OpenApiConfig.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\email\controller\EmailController.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\email\service\EmailService.java
-C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\JwtRequestFilter.java
-C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\JwtUtil.java
+C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\JwtAuthenticationFilter.java
+C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\JwtTokenProvider.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\MyUserDetailsService.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\SecurityConfig.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\config\DataLoader.java

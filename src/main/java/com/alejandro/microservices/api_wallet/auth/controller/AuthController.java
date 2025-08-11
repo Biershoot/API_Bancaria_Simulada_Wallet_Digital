@@ -2,7 +2,7 @@ package com.alejandro.microservices.api_wallet.auth.controller;
 
 import com.alejandro.microservices.api_wallet.auth.dto.AuthRequest;
 import com.alejandro.microservices.api_wallet.auth.dto.AuthResponse;
-import com.alejandro.microservices.api_wallet.security.JwtUtil;
+import com.alejandro.microservices.api_wallet.security.JwtTokenProvider;
 import com.alejandro.microservices.api_wallet.security.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +26,7 @@ public class AuthController {
     private MyUserDetailsService userDetailsService;
 
     @Autowired
-    private JwtUtil jwtUtil;
+    private JwtTokenProvider jwtTokenProvider;
 
     @PostMapping("/login")
     @Operation(summary = "Iniciar sesión", description = "Autentica un usuario y devuelve un token JWT")
@@ -37,7 +37,7 @@ public class AuthController {
             );
 
             final UserDetails userDetails = userDetailsService.loadUserByUsername(request.getUsername());
-            final String token = jwtUtil.generateToken(userDetails.getUsername());
+            final String token = jwtTokenProvider.generarToken(userDetails.getUsername());
 
             return ResponseEntity.ok(new AuthResponse(token, "Login exitoso"));
         } catch (BadCredentialsException e) {
