@@ -33,6 +33,9 @@ public class User {
 
     private Instant createdAt = Instant.now();
 
+    @Column(name = "refresh_token")
+    private String refreshToken;
+
     public User(String fullName, String email, String password) {
         this.fullName = fullName;
         this.email = email;

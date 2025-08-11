@@ -11,22 +11,42 @@ import java.util.Date;
 public class JwtTokenProvider {
 
     private final String SECRET = "EstaEsUnaClaveMuySeguraParaJWT1234567890";
-    private final long EXPIRATION_TIME = 86400000; // 1 día
+    private final long ACCESS_TOKEN_EXPIRATION = 900000; // 15 minutos
+    private final long REFRESH_TOKEN_EXPIRATION = 604800000; // 7 días
 
     private SecretKey getSigningKey() {
         return Keys.hmacShaKeyFor(SECRET.getBytes());
     }
 
     /**
-     * Genera un token JWT para un usuario
+     * Genera un access token JWT para un usuario (corta duración)
      */
-    public String generarToken(String username) {
+    public String generarAccessToken(String username) {
         return Jwts.builder()
                 .subject(username)
                 .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+                .expiration(new Date(System.currentTimeMillis() + ACCESS_TOKEN_EXPIRATION))
                 .signWith(getSigningKey())
                 .compact();
+    }
+
+    /**
+     * Genera un refresh token JWT para un usuario (larga duración)
+     */
+    public String generarRefreshToken(String username) {
+        return Jwts.builder()
+                .subject(username)
+                .issuedAt(new Date())
+                .expiration(new Date(System.currentTimeMillis() + REFRESH_TOKEN_EXPIRATION))
+                .signWith(getSigningKey())
+                .compact();
+    }
+
+    /**
+     * Genera un token JWT para un usuario (método legacy para compatibilidad)
+     */
+    public String generarToken(String username) {
+        return generarAccessToken(username);
     }
 
     /**

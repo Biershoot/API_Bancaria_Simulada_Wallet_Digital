@@ -28,7 +28,8 @@
 - **Respuesta esperada**:
 ```json
 {
-    "token": "eyJhbGciOiJIUzI1NiJ9...",
+    "accessToken": "eyJhbGciOiJIUzI1NiJ9...",
+    "refreshToken": "eyJhbGciOiJIUzI1NiJ9...",
     "message": "Login exitoso"
 }
 ```
@@ -42,7 +43,26 @@
 "Endpoint de autenticación funcionando correctamente"
 ```
 
-### **1.3 Logout**
+### **1.3 Refresh Token**
+- **URL**: `POST {{base_url}}/auth/refresh`
+- **Headers**: 
+  - `Content-Type: application/json`
+- **Body** (JSON):
+```json
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiJ9..."
+}
+```
+- **Respuesta esperada**:
+```json
+{
+    "accessToken": "eyJhbGciOiJIUzI1NiJ9...",
+    "refreshToken": "eyJhbGciOiJIUzI1NiJ9...",
+    "message": "Token refrescado exitosamente"
+}
+```
+
+### **1.4 Logout**
 - **URL**: `POST {{base_url}}/auth/logout`
 - **Headers**: 
   - `Authorization: Bearer {{token}}`
@@ -286,7 +306,8 @@ La aplicación creará automáticamente:
 - Los endpoints de wallet (`/api/wallet/**`) requieren token JWT válido
 - Los endpoints de usuario (`/api/user/**`) requieren rol USER o ADMIN
 - Los endpoints de administración (`/api/admin/**`) requieren rol ADMIN
-- El token JWT expira en 24 horas
+- **Access Token**: Expira en 15 minutos (seguridad)
+- **Refresh Token**: Expira en 7 días (conveniencia)
 - Swagger UI está disponible sin autenticación para facilitar las pruebas
 
 ### **Validaciones**
