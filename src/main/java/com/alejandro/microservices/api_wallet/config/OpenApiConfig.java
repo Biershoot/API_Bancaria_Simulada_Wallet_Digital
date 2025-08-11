@@ -51,10 +51,6 @@ public class OpenApiConfig {
                                 
                                 📚 **Documentación completa**: README.md, TECHNICAL_DETAILS.md, QUICK_DEMO.md
                                 """)
-                        .version("1.0.0")
-                        .contact(new Contact()
-                                .name("Alejandro")
-                                .email("alejandro@example.com")
-                                .url("https://github.com/Biershoot")));
+                        .version("1.0.0"));
     }
 }
