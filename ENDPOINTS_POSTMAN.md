@@ -12,44 +12,39 @@
 
 ---
 
-## **1. Autenticación**
+## **1. Autenticación JWT**
 
-### **1.1 Registro de Usuario**
-- **URL**: `POST {{base_url}}/api/auth/register`
+### **1.1 Login de Usuario**
+- **URL**: `POST {{base_url}}/auth/login`
 - **Headers**: 
   - `Content-Type: application/json`
 - **Body** (JSON):
 ```json
 {
-    "name": "Juan Pérez",
-    "email": "juan@ejemplo.com",
-    "password": "123456"
+    "username": "admin",
+    "password": "password"
 }
 ```
 - **Respuesta esperada**:
 ```json
 {
-    "token": "eyJhbGciOiJIUzI1NiJ9..."
+    "token": "eyJhbGciOiJIUzI1NiJ9...",
+    "message": "Login exitoso"
 }
 ```
 
-### **1.2 Login de Usuario**
-- **URL**: `POST {{base_url}}/api/auth/login`
+### **1.2 Test de Autenticación**
+- **URL**: `GET {{base_url}}/auth/test`
 - **Headers**: 
   - `Content-Type: application/json`
-- **Body** (JSON):
-```json
-{
-    "email": "juan@ejemplo.com",
-    "password": "123456"
-}
-```
 - **Respuesta esperada**:
 ```json
-{
-    "token": "eyJhbGciOiJIUzI1NiJ9..."
-}
+"Endpoint de autenticación funcionando correctamente"
 ```
+
+### **Usuarios Disponibles para Pruebas**:
+- **Usuario**: `admin` / **Contraseña**: `password`
+- **Usuario**: `user` / **Contraseña**: `password`
 
 ---
 
@@ -122,13 +117,9 @@
 
 ## **Flujo de Prueba Recomendado**
 
-### **Paso 1: Registrar usuarios**
-1. Registrar usuario 1: `POST /api/auth/register`
-2. Registrar usuario 2: `POST /api/auth/register`
-
-### **Paso 2: Login y obtener tokens**
-1. Login usuario 1: `POST /api/auth/login`
-2. Login usuario 2: `POST /api/auth/login`
+### **Paso 1: Login y obtener tokens**
+1. Login usuario admin: `POST /auth/login` con `{"username": "admin", "password": "password"}`
+2. Login usuario user: `POST /auth/login` con `{"username": "user", "password": "password"}`
 3. Guardar tokens en variables de entorno
 
 ### **Paso 3: Crear wallets**
@@ -162,9 +153,10 @@ La aplicación creará automáticamente:
 ## **Notas Importantes**
 
 ### **Seguridad**
-- Los endpoints de autenticación (`/api/auth/**`) están permitidos sin token
+- Los endpoints de autenticación (`/auth/**`) están permitidos sin token
 - Los endpoints de wallet (`/api/wallet/**`) requieren token JWT válido
 - El token JWT expira en 24 horas
+- Swagger UI está disponible sin autenticación para facilitar las pruebas
 
 ### **Validaciones**
 - Un usuario solo puede tener una wallet
