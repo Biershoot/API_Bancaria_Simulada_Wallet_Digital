@@ -103,13 +103,41 @@
 
 ---
 
-## **3. Documentación API**
+## **3. Email y Notificaciones**
 
-### **3.1 Swagger UI**
+### **3.1 Enviar Correo de Prueba**
+- **URL**: `POST {{base_url}}/api/email/test`
+- **Headers**: 
+  - `Content-Type: application/x-www-form-urlencoded`
+- **Body** (form-data):
+  - `email`: `tu_correo@ejemplo.com`
+- **Respuesta esperada**:
+```json
+"Correo de prueba enviado exitosamente a tu_correo@ejemplo.com"
+```
+
+### **3.2 Simular Notificación de Transferencia**
+- **URL**: `POST {{base_url}}/api/email/test-transfer`
+- **Headers**: 
+  - `Content-Type: application/x-www-form-urlencoded`
+- **Body** (form-data):
+  - `emailDestinatario`: `destinatario@ejemplo.com`
+  - `emailRemitente`: `remitente@ejemplo.com`
+  - `monto`: `500.00`
+- **Respuesta esperada**:
+```json
+"Notificación de transferencia enviada exitosamente"
+```
+
+---
+
+## **4. Documentación API**
+
+### **4.1 Swagger UI**
 - **URL**: `GET {{base_url}}/swagger-ui.html`
 - **Descripción**: Interfaz web para explorar y probar la API
 
-### **3.2 Especificación OpenAPI**
+### **4.2 Especificación OpenAPI**
 - **URL**: `GET {{base_url}}/v3/api-docs`
 - **Descripción**: Especificación JSON de la API
 
@@ -154,6 +182,7 @@ La aplicación creará automáticamente:
 
 ### **Seguridad**
 - Los endpoints de autenticación (`/auth/**`) están permitidos sin token
+- Los endpoints de email (`/api/email/**`) están permitidos sin token para pruebas
 - Los endpoints de wallet (`/api/wallet/**`) requieren token JWT válido
 - El token JWT expira en 24 horas
 - Swagger UI está disponible sin autenticación para facilitar las pruebas

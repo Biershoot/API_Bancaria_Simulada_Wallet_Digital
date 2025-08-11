@@ -1,9 +1,11 @@
 package com.alejandro.microservices.api_wallet.wallet.service;
 
+import com.alejandro.microservices.api_wallet.email.service.EmailService;
 import com.alejandro.microservices.api_wallet.wallet.entity.User;
 import com.alejandro.microservices.api_wallet.wallet.entity.Wallet;
 import com.alejandro.microservices.api_wallet.wallet.repository.UserRepository;
 import com.alejandro.microservices.api_wallet.wallet.repository.WalletRepository;
+import jakarta.mail.MessagingException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +16,12 @@ public class WalletService {
 
     private final WalletRepository walletRepository;
     private final UserRepository userRepository;
+    private final EmailService emailService;
 
-    public WalletService(WalletRepository walletRepository, UserRepository userRepository) {
+    public WalletService(WalletRepository walletRepository, UserRepository userRepository, EmailService emailService) {
         this.walletRepository = walletRepository;
         this.userRepository = userRepository;
+        this.emailService = emailService;
     }
 
     public Wallet createWalletForUser(String email) {
@@ -71,5 +75,25 @@ public class WalletService {
 
         walletRepository.save(fromWallet);
         walletRepository.save(toWallet);
+
+        // Enviar notificaciones por correo
+        try {
+            // Notificar al destinatario
+            emailService.enviarNotificacionTransferencia(
+                toEmail, 
+                fromEmail, 
+                amount.doubleValue()
+            );
+            
+            // Confirmar al remitente
+            emailService.enviarConfirmacionTransferencia(
+                fromEmail, 
+                toEmail, 
+                amount.doubleValue()
+            );
+        } catch (MessagingException e) {
+            // Log del error pero no fallar la transferencia
+            System.err.println("Error enviando correos de notificación: " + e.getMessage());
+        }
     }
 }

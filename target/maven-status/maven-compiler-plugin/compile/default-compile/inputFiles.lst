@@ -3,6 +3,8 @@ C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservice
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\auth\dto\AuthRequest.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\auth\dto\AuthResponse.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\config\OpenApiConfig.java
+C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\email\controller\EmailController.java
+C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\email\service\EmailService.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\JwtRequestFilter.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\JwtUtil.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\MyUserDetailsService.java
@@ -20,8 +22,4 @@ C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservice
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\repository\TransactionRepository.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\repository\UserRepository.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\repository\WalletRepository.java
-C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\security\CustomUserDetailsService.java
-C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\security\JwtAuthenticationFilter.java
-C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\security\JwtUtil.java
-C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\security\SecurityConfig.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\service\WalletService.java
