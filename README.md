@@ -434,9 +434,6 @@ DB_PASSWORD=password_seguro
 - **JWT** con configuración segura
 - **Documentación** con Swagger/OpenAPI
 
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
 ## 👨‍💻 Autor
 
