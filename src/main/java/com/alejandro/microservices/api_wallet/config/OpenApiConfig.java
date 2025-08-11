@@ -30,71 +30,26 @@ public class OpenApiConfig {
                         .description("""
                                 ## 📋 Descripción del Proyecto
                                 
-                                API Wallet Digital es un sistema bancario simulado desarrollado con **Spring Boot** que implementa funcionalidades completas de autenticación, autorización, gestión de wallets digitales y transferencias monetarias. El proyecto demuestra habilidades avanzadas en desarrollo backend, seguridad web y arquitectura de microservicios.
+                                API Wallet Digital es un sistema bancario simulado desarrollado con Spring Boot que implementa funcionalidades completas de autenticación, autorización, gestión de wallets digitales y transferencias monetarias. El proyecto demuestra habilidades avanzadas en desarrollo backend, seguridad web y arquitectura de microservicios.
                                 
-                                ## 🎯 Problemáticas Resueltas
+                                ### 🔐 Características Principales
+                                - **JWT Authentication** con Access & Refresh Tokens
+                                - **Spring Security** con autorización basada en roles
+                                - **Gestión de Wallets** con transferencias seguras
+                                - **Notificaciones por Email** automáticas
+                                - **Token Blacklist** persistente en base de datos
+                                - **Limpieza Automática** de tokens expirados
                                 
-                                ### 🔐 **Seguridad en APIs**
-                                - JWT Stateless Authentication con Refresh Tokens
-                                - Token Blacklist Persistente para invalidación inmediata
-                                - Autorización Basada en Roles (ADMIN, USER)
+                                ### 🛠️ Stack Tecnológico
+                                - Java 17, Spring Boot 3.2, Spring Security 6.2
+                                - JWT (jjwt 0.12.5), MySQL 8.0, JPA/Hibernate
+                                - Swagger/OpenAPI 3, JavaMail API
                                 
-                                ### 💰 **Gestión de Transacciones Financieras**
-                                - Transacciones Atómicas con garantía de consistencia
-                                - Validaciones de Negocio para prevenir operaciones inválidas
-                                - Notificaciones Automáticas por email
-                                - Auditoría Completa de todas las operaciones
-                                
-                                ### 🗄️ **Performance y Optimización**
-                                - Índices Optimizados para consultas rápidas
-                                - Connection Pooling para reutilización eficiente
-                                - Limpieza Automática de datos obsoletos
-                                - Scheduler para mantenimiento programado
-                                
-                                ## 🛠️ Stack Tecnológico
-                                
-                                - **Java 17** - Lenguaje de programación principal
-                                - **Spring Boot 3.2** - Framework de desarrollo
-                                - **Spring Security 6.2** - Seguridad y autenticación
-                                - **JWT (jjwt 0.12.5)** - Tokens de autenticación
-                                - **MySQL 8.0** - Base de datos relacional
-                                - **Swagger/OpenAPI 3** - Documentación automática
-                                
-                                ## 🚀 Funcionalidades Principales
-                                
-                                - 🔐 **Autenticación JWT** con Access Tokens (15 min) y Refresh Tokens (7 días)
-                                - 🛡️ **Spring Security** con autorización basada en roles
-                                - 💰 **Gestión completa de wallets** digitales con transferencias
-                                - 📧 **Sistema de notificaciones** por email automático
-                                - 🧹 **Limpieza automática** de tokens expirados
-                                - 🔄 **Sistema de blacklist** persistente para tokens
-                                
-                                ## 📊 Métricas del Proyecto
-                                
-                                - **Líneas de código**: 2,500+ líneas
-                                - **Endpoints API**: 20+ endpoints documentados
-                                - **Entidades JPA**: 4 entidades principales
-                                - **Servicios**: 6 servicios con lógica de negocio
-                                - **Controladores**: 5 controladores REST
-                                
-                                ## 🔧 Configuración de Seguridad
-                                
-                                ### Usuarios de Prueba
+                                ### 👥 Usuarios de Prueba
                                 - **Admin**: `admin` / `password` (Roles: ADMIN, USER)
                                 - **Usuario**: `user` / `password` (Roles: USER)
                                 
-                                ### Endpoints por Rol
-                                - **Públicos**: `/auth/**`, `/swagger-ui/**`, `/api/email/**`
-                                - **USER**: `/api/user/**`, `/api/wallet/**`
-                                - **ADMIN**: `/api/admin/**`, `/api/user/**`, `/api/wallet/**`
-                                
-                                ## 📚 Documentación Completa
-                                
-                                Para más detalles técnicos, ver los archivos:
-                                - `README.md` - Documentación general del proyecto
-                                - `TECHNICAL_DETAILS.md` - Detalles técnicos avanzados
-                                - `QUICK_DEMO.md` - Guía de demostración rápida
-                                - `ENDPOINTS_POSTMAN.md` - Colección de Postman
+                                📚 **Documentación completa**: README.md, TECHNICAL_DETAILS.md, QUICK_DEMO.md
                                 """)
                         .version("1.0.0")
                         .contact(new Contact()
