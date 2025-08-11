@@ -71,6 +71,15 @@
 "Logout exitoso. El token ha sido invalidado en el servidor."
 ```
 
+### **1.5 Estadísticas de Blacklist**
+- **URL**: `GET {{base_url}}/auth/blacklist/stats`
+- **Headers**: 
+  - `Authorization: Bearer {{token}}`
+- **Respuesta esperada**:
+```json
+"Tokens en blacklist: 5"
+```
+
 ### **Usuarios Disponibles para Pruebas**:
 - **Usuario**: `admin` / **Contraseña**: `password` (Roles: ADMIN, USER)
 - **Usuario**: `user` / **Contraseña**: `password` (Roles: USER)

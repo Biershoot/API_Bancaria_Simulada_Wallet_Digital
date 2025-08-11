@@ -18,6 +18,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.Map;
+import java.time.Instant;
 
 @RestController
 @RequestMapping("/auth")
@@ -112,15 +113,46 @@ public class AuthController {
         }
     }
 
+    @GetMapping("/blacklist/stats")
+    @Operation(summary = "Estadísticas de blacklist", description = "Obtiene estadísticas de la lista negra de tokens")
+    public ResponseEntity<String> getBlacklistStats() {
+        long blacklistSize = tokenBlacklistService.getBlacklistSize();
+        return ResponseEntity.ok("Tokens en blacklist: " + blacklistSize);
+    }
+
     @PostMapping("/logout")
     @Operation(summary = "Cerrar sesión", description = "Cierra la sesión del usuario y registra el logout")
     public ResponseEntity<String> logout(HttpServletRequest request) {
         String authHeader = request.getHeader("Authorization");
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String token = authHeader.substring(7);
-            // Agregar token a la lista negra para invalidarlo en el servidor
-            tokenBlacklistService.blacklistToken(token);
-            return ResponseEntity.ok("Logout exitoso. El token ha sido invalidado en el servidor.");
+            
+            try {
+                // Obtener fecha de expiración del token
+                Instant expiresAt = jwtTokenProvider.obtenerFechaExpiracionInstant(token);
+                
+                // Agregar token a la lista negra con su fecha de expiración
+                tokenBlacklistService.blacklistToken(token, expiresAt);
+                
+                // Opcional: revocar refresh token del usuario
+                try {
+                    String username = jwtTokenProvider.obtenerUsernameDelToken(token);
+                    User user = userRepository.findByEmail(username).orElse(null);
+                    if (user != null && user.getRefreshToken() != null) {
+                        user.setRefreshToken(null);
+                        userRepository.save(user);
+                    }
+                } catch (Exception e) {
+                    // Si no se puede revocar el refresh token, continuar
+                    System.err.println("Error revocando refresh token: " + e.getMessage());
+                }
+                
+                return ResponseEntity.ok("Logout exitoso. El token ha sido invalidado en el servidor.");
+            } catch (Exception e) {
+                // Si no se puede obtener la fecha de expiración, usar método legacy
+                tokenBlacklistService.blacklistToken(token);
+                return ResponseEntity.ok("Logout exitoso. El token ha sido invalidado en el servidor.");
+            }
         }
         return ResponseEntity.badRequest().body("Token no encontrado");
     }

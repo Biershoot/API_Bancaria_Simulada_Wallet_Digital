@@ -4,6 +4,7 @@ C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservice
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\auth\dto\AuthRequest.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\auth\dto\AuthResponse.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\config\OpenApiConfig.java
+C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\config\TokenCleanupScheduler.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\email\controller\EmailController.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\email\service\EmailService.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\security\JwtAuthenticationFilter.java
@@ -17,10 +18,12 @@ C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservice
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\dto\TransferRequest.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\dto\TransferResponse.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\dto\WalletResponse.java
+C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\entity\BlacklistedToken.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\entity\Role.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\entity\Transaction.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\entity\User.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\entity\Wallet.java
+C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\repository\BlacklistedTokenRepository.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\repository\RoleRepository.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\repository\TransactionRepository.java
 C:\Users\Alejandro\Downloads\api_wallet\src\main\java\com\alejandro\microservices\api_wallet\wallet\repository\UserRepository.java

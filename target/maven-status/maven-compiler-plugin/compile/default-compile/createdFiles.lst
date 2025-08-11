@@ -13,6 +13,9 @@ com\alejandro\microservices\api_wallet\wallet\entity\Wallet.class
 com\alejandro\microservices\api_wallet\wallet\entity\Transaction.class
 com\alejandro\microservices\api_wallet\wallet\entity\Wallet$WalletBuilder.class
 com\alejandro\microservices\api_wallet\wallet\config\DataLoader.class
+com\alejandro\microservices\api_wallet\wallet\repository\BlacklistedTokenRepository.class
+com\alejandro\microservices\api_wallet\wallet\entity\BlacklistedToken.class
+com\alejandro\microservices\api_wallet\config\TokenCleanupScheduler.class
 com\alejandro\microservices\api_wallet\security\MyUserDetailsService.class
 com\alejandro\microservices\api_wallet\wallet\controller\WalletController.class
 com\alejandro\microservices\api_wallet\wallet\repository\WalletRepository.class
@@ -24,6 +27,7 @@ com\alejandro\microservices\api_wallet\wallet\repository\TransactionRepository.c
 com\alejandro\microservices\api_wallet\wallet\dto\TransferResponse.class
 com\alejandro\microservices\api_wallet\security\JwtAuthenticationFilter.class
 com\alejandro\microservices\api_wallet\email\controller\EmailController.class
+com\alejandro\microservices\api_wallet\wallet\entity\BlacklistedToken$BlacklistedTokenBuilder.class
 com\alejandro\microservices\api_wallet\wallet\repository\UserRepository.class
 com\alejandro\microservices\api_wallet\wallet\repository\RoleRepository.class
 com\alejandro\microservices\api_wallet\config\OpenApiConfig.class
