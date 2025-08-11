@@ -52,12 +52,97 @@
 ```
 
 ### **Usuarios Disponibles para Pruebas**:
-- **Usuario**: `admin` / **Contraseña**: `password`
-- **Usuario**: `user` / **Contraseña**: `password`
+- **Usuario**: `admin` / **Contraseña**: `password` (Roles: ADMIN, USER)
+- **Usuario**: `user` / **Contraseña**: `password` (Roles: USER)
 
 ---
+## **2. Gestión de Usuario (USER y ADMIN)**
 
-## **2. Gestión de Wallet**
+### **2.1 Perfil de Usuario**
+- **URL**: `GET {{base_url}}/api/user/profile`
+- **Headers**: 
+  - `Authorization: Bearer {{token}}`
+- **Respuesta esperada**:
+```json
+"Perfil del usuario: admin"
+```
+
+### **2.2 Actualizar Perfil**
+- **URL**: `PUT {{base_url}}/api/user/profile`
+- **Headers**: 
+  - `Content-Type: application/json`
+  - `Authorization: Bearer {{token}}`
+- **Body** (JSON):
+```json
+{
+    "name": "Nuevo Nombre",
+    "email": "nuevo@email.com"
+}
+```
+- **Respuesta esperada**:
+```json
+"Perfil actualizado exitosamente"
+```
+
+### **2.3 Preferencias de Usuario**
+- **URL**: `GET {{base_url}}/api/user/preferences`
+- **Headers**: 
+  - `Authorization: Bearer {{token}}`
+- **Respuesta esperada**:
+```json
+"Preferencias del usuario"
+```
+
+### **2.4 Actividad del Usuario**
+- **URL**: `GET {{base_url}}/api/user/activity`
+- **Headers**: 
+  - `Authorization: Bearer {{token}}`
+- **Respuesta esperada**:
+```json
+"Historial de actividad del usuario"
+```
+
+---
+## **3. Administración (Solo ADMIN)**
+
+### **3.1 Dashboard de Administración**
+- **URL**: `GET {{base_url}}/api/admin/dashboard`
+- **Headers**: 
+  - `Authorization: Bearer {{token}}` (debe ser token de admin)
+- **Respuesta esperada**:
+```json
+"Panel de administración - Solo accesible para administradores"
+```
+
+### **3.2 Listar Usuarios**
+- **URL**: `GET {{base_url}}/api/admin/users`
+- **Headers**: 
+  - `Authorization: Bearer {{token}}` (debe ser token de admin)
+- **Respuesta esperada**:
+```json
+"Lista de usuarios del sistema"
+```
+
+### **3.3 Deshabilitar Usuario**
+- **URL**: `POST {{base_url}}/api/admin/users/{userId}/disable`
+- **Headers**: 
+  - `Authorization: Bearer {{token}}` (debe ser token de admin)
+- **Respuesta esperada**:
+```json
+"Usuario 123 deshabilitado exitosamente"
+```
+
+### **3.4 Estadísticas del Sistema**
+- **URL**: `GET {{base_url}}/api/admin/statistics`
+- **Headers**: 
+  - `Authorization: Bearer {{token}}` (debe ser token de admin)
+- **Respuesta esperada**:
+```json
+"Estadísticas del sistema - Total de usuarios: 150, Transacciones: 1250"
+```
+
+---
+## **4. Gestión de Wallet**
 
 ### **2.1 Crear Wallet**
 - **URL**: `POST {{base_url}}/api/wallet/create`
@@ -111,8 +196,7 @@
 ```
 
 ---
-
-## **3. Email y Notificaciones**
+## **5. Email y Notificaciones**
 
 ### **3.1 Enviar Correo de Prueba**
 - **URL**: `POST {{base_url}}/api/email/test`
@@ -139,14 +223,13 @@
 ```
 
 ---
+## **6. Documentación API**
 
-## **4. Documentación API**
-
-### **4.1 Swagger UI**
+### **6.1 Swagger UI**
 - **URL**: `GET {{base_url}}/swagger-ui.html`
 - **Descripción**: Interfaz web para explorar y probar la API
 
-### **4.2 Especificación OpenAPI**
+### **6.2 Especificación OpenAPI**
 - **URL**: `GET {{base_url}}/v3/api-docs`
 - **Descripción**: Especificación JSON de la API
 
@@ -159,11 +242,19 @@
 2. Login usuario user: `POST /auth/login` con `{"username": "user", "password": "password"}`
 3. Guardar tokens en variables de entorno
 
-### **Paso 3: Crear wallets**
+### **Paso 2: Probar roles de usuario**
+1. Probar endpoints de usuario con token de admin: `GET /api/user/profile`
+2. Probar endpoints de usuario con token de user: `GET /api/user/profile`
+
+### **Paso 3: Probar roles de administración**
+1. Probar endpoints de admin con token de admin: `GET /api/admin/dashboard`
+2. Probar endpoints de admin con token de user (debe fallar): `GET /api/admin/dashboard`
+
+### **Paso 4: Crear wallets**
 1. Crear wallet para usuario 1: `POST /api/wallet/create`
 2. Crear wallet para usuario 2: `POST /api/wallet/create`
 
-### **Paso 4: Probar transferencias**
+### **Paso 5: Probar transferencias**
 1. Consultar balance usuario 1: `GET /api/wallet/balance`
 2. Realizar transferencia: `POST /api/wallet/transfer`
 3. Verificar balances actualizados
@@ -193,6 +284,8 @@ La aplicación creará automáticamente:
 - Los endpoints de autenticación (`/auth/**`) están permitidos sin token
 - Los endpoints de email (`/api/email/**`) están permitidos sin token para pruebas
 - Los endpoints de wallet (`/api/wallet/**`) requieren token JWT válido
+- Los endpoints de usuario (`/api/user/**`) requieren rol USER o ADMIN
+- Los endpoints de administración (`/api/admin/**`) requieren rol ADMIN
 - El token JWT expira en 24 horas
 - Swagger UI está disponible sin autenticación para facilitar las pruebas
 

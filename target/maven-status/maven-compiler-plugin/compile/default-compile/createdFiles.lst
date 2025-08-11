@@ -6,7 +6,9 @@ com\alejandro\microservices\api_wallet\security\JwtTokenProvider.class
 com\alejandro\microservices\api_wallet\wallet\entity\User.class
 com\alejandro\microservices\api_wallet\auth\dto\AuthRequest.class
 com\alejandro\microservices\api_wallet\auth\dto\AuthResponse.class
+com\alejandro\microservices\api_wallet\admin\controller\AdminController.class
 com\alejandro\microservices\api_wallet\wallet\entity\Role$RoleName.class
+com\alejandro\microservices\api_wallet\user\controller\UserController.class
 com\alejandro\microservices\api_wallet\wallet\entity\Wallet.class
 com\alejandro\microservices\api_wallet\wallet\entity\Transaction.class
 com\alejandro\microservices\api_wallet\wallet\entity\Wallet$WalletBuilder.class
